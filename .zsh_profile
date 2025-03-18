@@ -1,26 +1,34 @@
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CURRENT_DESKTOP=GNOME
+# Ensure PATH has unique entries
+typeset -U path
 
-export PATH="/opt/nvim/:$HOME/.local/bin/scripts:$PATH"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CURRENT_DESKTOP="GNOME"
 
 # make nvim default
-VIM="nvim"
+export EDITOR="nvim"
+
+# Path Configuration
+export GOPATH="$HOME/go"
+export PATH="/opt/nvim:$HOME/.local/bin:$HOME/.local/bin/scripts:/usr/local/go/bin:$GOPATH/bin:$PATH"
 
 # helpful alias
-alias vim="nvim"
+alias vim='nvim'
 alias edit='nvim'
-alias zconf="nvim ~/.zshrc"
-alias zpconf="nvim ~/.zsh_profile"
-alias dot='chezmoi'
+alias zconf='nvim ~/.zshrc'
+alias zpconf='nvim ~/.zsh_profile'
+
+# Config File Shortcuts
 alias i3c='nvim ~/.config/i3/config'
 alias muxc='nvim ~/.config/tmux/tmux.conf'
 alias picomc='nvim ~/.config/picom/picom.conf'
 alias polyc='nvim ~/.config/polybar/config.ini'
 alias kittyc='nvim ~/.config/kitty/kitty.conf'
 alias vimc='nvim ~/.config/nvim/lua/plugins/ui.lua'
+alias bsconf='nvim ~/.bashrc' # make nvim default
 
-alias wific='nmtui' # loads terminal ui for wifi dashboard
-alias soz='source ~/.zshrc' # source .zshrc
+# System Utilities
+alias wific='nmtui' # loads terminal ui for wifi management
+alias soz='source ~/.zshrc' # reload .zshrc
 alias root='sudo -i' # tune sudo and su
 alias lopack='pacman -Qdtq' # list orphaned packages
 alias rmopack='sudo pacman -Rs $(pacman -Qdtq)' # remove orphaned packages
@@ -28,33 +36,24 @@ alias ycp='yay -Sc' # clean yay packages
 alias ylp='yay -Ps' # list installed packages in yay
 alias ssh='kitten ssh '
 
-# some more ls aliases
+# Utilities commands
+alias md='mkdir -pv' # create parent directory on demand
+alias cpv='rsync -ah --info=progress2' # copy with progress bar
+# alias echopl="echo $PATH | tr : \\n"
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%Y-%m-%d %H:%M:%S"' # Corrected date format
+
+# ls enhancements
 alias l='ls -lF'
 alias ll='ls -alF'
 alias la='ls -A'
+
+# safer rm, mv, cp, ln
 alias rm='rm -I --preserve-root'
-
-alias md='mkdir -pv' # create parent directory on demand
-
-# with confirmation
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
 
-alias cpv='rsync -ah --info=progress2' # copy with progress bar
-
-alias bsconf='nvim ~/.bashrc' # make nvim default
-
-# shows all the path
-alias path='echo -e ${PATH//:/\\n}'
-alias now='date +"%"'
-alias nowtime=now
-
-# alias echopl='echo $PATH | tr : \\n'
-
+# zsh enhancements
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 bindkey '^ ' autosuggest-accept
-
-# Go
-export GOPATH=$HOME/go
-export PATH=/usr/local/go/bin:$GOPATH/bin:~/.local/bin:~/Scripts:$PATH
