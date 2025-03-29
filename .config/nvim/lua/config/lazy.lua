@@ -22,6 +22,21 @@ require("lazy").setup({
     },
 
     -- import any extras modules here
+    -- coding
+    { import = "lazyvim.plugins.extras.coding.mini-surround" },
+
+    -- editor
+    { import = "lazyvim.plugins.extras.editor.mini-diff" },
+    { import = "lazyvim.plugins.extras.editor.snacks_explorer" },
+    { import = "lazyvim.plugins.extras.editor.snacks_picker" },
+
+    -- languages
+    { import = "lazyvim.plugins.extras.lang.go" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+
+    -- others
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
     -- { import = "lazyvim.plugins.extras.dap.core" },
@@ -40,7 +55,7 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
 
-  concurrency = 10,
+  -- concurrency = 10,
 
   ui = {
     border = "rounded",
