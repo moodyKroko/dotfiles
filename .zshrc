@@ -25,7 +25,7 @@ if [ -f ~/.zsh_profile ]; then
   source ~/.zsh_profile
 fi
 
-eval $(keychain --eval --quiet --agents ssh id_ed25519)
+eval $(keychain --eval --quiet id_ed25519)
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
