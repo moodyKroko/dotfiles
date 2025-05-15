@@ -36,6 +36,7 @@ alias rmopack='sudo pacman -Rs $(pacman -Qdtq)' # remove orphaned packages
 alias ycp='yay -Sc' # clean yay packages
 alias ylp='yay -Ps' # list installed packages in yay
 alias ssh='kitten ssh '
+alias upmirrors='sudo reflector --country GB,FR,DE --latest 10 --protocol https,http --sort rate --save /etc/pacman.d/mirrorlist'
 
 # Utilities commands
 alias md='mkdir -pv' # create parent directory on demand
