@@ -6,6 +6,10 @@ return {
     opts = {
       flavour = "macchiato",
       transparent_background = true,
+      float = {
+        transparent = true,
+        solid = false,
+      },
       -- try to get these working sometime in future
       -- highlights.BlinkCmpMenu = { fg = colors.magenta, bg = colors.none }
       -- highlights.BlinkCmpDoc = { fg = colors.purple, bg = colors.none }
