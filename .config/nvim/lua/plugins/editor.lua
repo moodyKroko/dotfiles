@@ -4,7 +4,7 @@ return {
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
 
   {
-    "echasnovski/mini.files",
+    "nvim-mini/mini.files",
     options = {
         use_as_default_explorer = true,
       }
