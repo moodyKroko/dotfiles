@@ -3,7 +3,7 @@
 # all available config options and their default values.
 #
 
-background-opacity = 0.7
+background-opacity = 0.8
 # background-blur = 20
 
 window-decoration = server
@@ -36,7 +36,7 @@ palette = 13=#f2a9dd
 palette = 14=#63cbc0
 palette = 15=#b8c0e0
 
-font-size = 16
+font-size = 14
 font-family = JetBrainsMono Nerd Font
 font-family-bold = JetBrainsMono Nerd Font
 font-family-italic = JetBrainsMono Nerd Font
