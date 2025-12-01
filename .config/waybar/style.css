@@ -104,6 +104,7 @@ button:hover {
 #pulseaudio,
 #wireplumber,
 #custom-media,
+#custom-notification,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -234,6 +235,10 @@ label:focus {
     /*background-color: #66cc99;*/
     color: #2a5c45;
     min-width: 100px;
+}
+
+#custom-notification.notification {
+  color: @maroon;
 }
 
 #custom-media.custom-spotify {

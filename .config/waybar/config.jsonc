@@ -6,11 +6,7 @@
   // "width": 1280, // Waybar width
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
-  "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/submap",
-    "sway/scratchpad"
-  ],
+  "modules-left": ["hyprland/workspaces", "hyprland/submap", "sway/scratchpad"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
     // "mpd",
@@ -23,7 +19,8 @@
     "keyboard-state",
     "sway/language",
     "battery",
-    "clock"
+    "clock",
+    "custom/notification"
   ],
   // Modules configuration
   "hyprland/workspaces": {
@@ -108,32 +105,30 @@
   "memory": {
     "format": "{}%  "
   },
-	"battery": {
-		// "bat":
-		// "adapter":
-		// "design-capacity":
-		// "full-at":
-		// "interval":
-		"states": {
-			"warning": 20,
-			"critical": 10
-		},
-		"format": "{icon} {capacity}%",
-		"format-time": "{H} hr {M} min",
-		"format-icons": [
-			"󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
-		],
-		"format-charging": "󰉁 {capacity}%",
-		"min-length": 5,
-		"max-length": 5,
-		"tooltip-format": "Discharging: {time}",
-		"tooltip-format-charging": "Charging: {time}",
-		"events": {
-			"on-discharging-warning": "notify-send 'Low Battery' '{capacity}% battery remaining'",
-			"on-discharging-critical": "notify-send 'Low Battery' '{capacity}% battery remaining' -u critical",
-			"on-charging-100": "notify-send 'Battery full' 'Battery is at {capacity}%'"
-		}
-	},
+  "battery": {
+    // "bat":
+    // "adapter":
+    // "design-capacity":
+    // "full-at":
+    // "interval":
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "{icon} {capacity}%",
+    "format-time": "{H} hr {M} min",
+    "format-icons": ["󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-charging": "󰉁 {capacity}%",
+    "min-length": 5,
+    "max-length": 5,
+    "tooltip-format": "Discharging: {time}",
+    "tooltip-format-charging": "Charging: {time}",
+    "events": {
+      "on-discharging-warning": "notify-send 'Low Battery' '{capacity}% battery remaining'",
+      "on-discharging-critical": "notify-send 'Low Battery' '{capacity}% battery remaining' -u critical",
+      "on-charging-100": "notify-send 'Battery full' 'Battery is at {capacity}%'"
+    }
+  },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": "{essid} ({signalStrength}%) ",
@@ -178,14 +173,14 @@
     "format": "{icon} {volume}%",
     "format-muted": " off",
     "format-icons": {
-    "default": ["", "", ""]
+      "default": ["", "", ""]
     },
     "max-volume": 100,
     "scroll-step": 2,
     "smooth-scrolling-threshold": 1,
     "on-click": "pavucontrol",
     "on-click-middle": "pavucontrol"
-  }, 
+  },
   "custom/media": {
     "format": "{icon} {text}",
     "return-type": "json",
@@ -198,5 +193,26 @@
     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
-    "reload_style_on_change": true
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "icon-size": 21,
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "reload_style_on_change": true
 }
