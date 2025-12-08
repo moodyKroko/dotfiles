@@ -36,8 +36,13 @@ palette = 13=#f2a9dd
 palette = 14=#63cbc0
 palette = 15=#b8c0e0
 
+# Fonts
 font-size = 14
 font-family = JetBrainsMono Nerd Font
 font-family-bold = JetBrainsMono Nerd Font
 font-family-italic = JetBrainsMono Nerd Font
 font-family-bold-italic = JetBrainsMono Nerd Font
+
+# Keybinds
+keybind = ctrl+alt+h=goto_split:left
+keybind = ctrl+alt+l=goto_split:right
