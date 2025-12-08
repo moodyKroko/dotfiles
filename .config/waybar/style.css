@@ -166,6 +166,10 @@ button:hover {
     color: @green;
 }
 
+#battery{
+  padding-right: 15px;
+}
+
 #power-profiles-daemon {
     padding-right: 15px;
 }
