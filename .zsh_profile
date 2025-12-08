@@ -13,7 +13,7 @@ export PATH="/opt/nvim:$HOME/.local/bin:$HOME/.local/bin/scripts:/usr/local/go/b
 
 # helpful alias
 alias vim='nvim'
-alias edit='nvim'
+alias cat='bat'
 alias zconf='nvim ~/.zshrc'
 alias zpconf='nvim ~/.zsh_profile'
 
@@ -59,3 +59,6 @@ alias ln='ln -i'
 # zsh enhancements
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 bindkey '^ ' autosuggest-accept
+
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
