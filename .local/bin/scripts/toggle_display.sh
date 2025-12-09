@@ -1,30 +1,10 @@
 #!/bin/bash
 
-# Get the names of your displays
-INTERNAL="eDP-1"    # Typically the internal laptop display
-EXTERNAL="HDMI-A-1" # Your external display, adjust as needed
-DEFAULT_ENABLE="${INTERNAL}, 1920x1080@60, 0x0, 1"
+INTERNAL="eDP-1"
+EXTERNAL="HDMI-A-1"
+DEFAULT_ENABLE="${INTERNAL},preferred,auto,1"
 
-if [[ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}" ]]; then
-
-  if ! command -v jq &>/dev/null; then
-    notify-send -u critical "Error: jq is required but not installed."
-    exit 1
-  fi
-
-  connected_monitors=$(hyprctl monitors all -j | jq -r '.[].name')
-
-  case "${connected_monitors}" in
-  *"${EXTERNAL}"*)
-    hyprctl keyword monitor "${INTERNAL},disable"
-    ;;
-  *)
-    hyprctl keyword monitor "${DEFAULT_ENABLE}"
-    ;;
-  esac
-  exit 0
-fi
-
+# for i3wm =====================
 if pgrep -x "i3" >/dev/null; then
   connected_x_monitors=$(xrandr --query | awk '/ connected/ {print $1}')
 
@@ -40,4 +20,20 @@ if pgrep -x "i3" >/dev/null; then
 
   # Restart i3 to apply changes
   i3-msg restart
+  exit 0
 fi
+
+# for hyprland =====================
+handle_monitor() {
+  if [ "$1" = "monitoradded>>HDMI-A-1" ]; then
+    hyprctl keyword monitor "${INTERNAL},disable"
+    hyprctl keyword monitor "${EXTERNAL},1920x1080@74.99,auto,1"
+  elif [ "$1" = "monitorremoved>>HDMI-A-1" ]; then
+    hyprctl keyword monitor "${DEFAULT_ENABLE}"
+    hyprctl keyword monitor "${EXTERNAL},preferred,auto,1"
+  fi
+}
+
+# wait for the process to send data that notifies about monitor being added/removed
+# then use handle_monitor to enable/disable monitor
+socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do handle_monitor "$line" && sleep 0.1; done
