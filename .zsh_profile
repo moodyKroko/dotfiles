@@ -14,6 +14,8 @@ export PATH="/opt/nvim:$HOME/.local/bin:$HOME/.local/bin/scripts:/usr/local/go/b
 # helpful alias
 alias vim='nvim'
 alias cat='bat'
+alias lg='lazygit'
+alias ld='lazydocker'
 alias zconf='nvim ~/.zshrc'
 alias zpconf='nvim ~/.zsh_profile'
 
