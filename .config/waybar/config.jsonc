@@ -43,6 +43,14 @@
       "DP-2": [1, 2, 3, 4, 5] // workspaces 2 and 3 shown on DP-1
     }
   },
+  "hyprland/window": {
+    "format": "<span size='16pt' color=\"#F1B941\">󰋇 </span>{}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "🌎 $1",
+      "(.*) - zsh": " [$1]"
+    },
+    "separate-outputs": true
+  },
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
