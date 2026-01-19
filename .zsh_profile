@@ -46,9 +46,14 @@ alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%Y-%m-%d %H:%M:%S"' # Corrected date format
 
 # ls enhancements
-alias l='ls -lF'
-alias ll='ls -alF'
-alias la='ls -A'
+# alias l='ls -lF'
+# alias ll='ls -alF'
+# alias la='ls -A'
+
+# eza enhancements
+alias l='eza --color=always --icons --git --no-quotes --group-directories-first -l -F --sort name'
+alias ll='eza --color=always --icons --git --no-quotes --group-directories-first -a -l -F --sort name'
+alias la='eza --color=always --icons --git --no-quotes --group-directories-first -A --sort name'
 
 # safer rm, mv, cp, ln
 alias rm='rm -I --preserve-root'
