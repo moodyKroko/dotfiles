@@ -1,15 +1,16 @@
-# Ensure PATH has unique entries
-typeset -U path
-
 export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CURRENT_DESKTOP="GNOME"
+# export XDG_CURRENT_DESKTOP="GNOME"
 
 # make nvim default
 export EDITOR="nvim"
+export TERMINAL="ghostty"
 
 # Path Configuration
 export GOPATH="$HOME/go"
 export PATH="/opt/nvim:$HOME/.local/bin:$HOME/.local/bin/scripts:/usr/local/go/bin:$GOPATH/bin:$PATH"
+
+# Ensure PATH has unique entries
+typeset -U path
 
 # helpful alias
 alias vim='nvim'
