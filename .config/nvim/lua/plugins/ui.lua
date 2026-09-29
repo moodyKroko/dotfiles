@@ -76,7 +76,7 @@ return {
 		-- enabled = false,
 		opts = {
 			options = {
-				theme = "catppuccin", --"ayu_dark", --"iceberg_dark",
+				theme = "auto", --"ayu_dark", --"iceberg_dark",
 				section_separators = { left = "", right = "" },
 				component_separators = { left = "", right = "" },
 			},
