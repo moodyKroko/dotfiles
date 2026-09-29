@@ -3,8 +3,8 @@
 # all available config options and their default values.
 #
 
-background-opacity = 0.85
-# background-blur = 20
+background-opacity = 0.80
+background-blur = true
 
 window-decoration = server
 window-padding-x = 5
@@ -13,7 +13,7 @@ window-padding-y = 5
 theme = Catppuccin Mocha
 bold-is-bright = true
 
-# background = #24273a
+background = #1e1e2e
 foreground = #cad3f5
 selection-background = #5b6078
 selection-foreground = #cad3f5
