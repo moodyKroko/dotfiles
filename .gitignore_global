@@ -1,0 +1,15 @@
+# Private SSH keys & secrets
+id_ed25519
+id_ed25519_sk
+id_rsa
+id_ecdsa
+*.pem
+*.key
+.env
+
+# Editor & OS clutter
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

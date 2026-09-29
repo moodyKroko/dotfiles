@@ -4,7 +4,7 @@
 	signingkey = /home/moodykroko/.ssh/id_ed25519.pub
 [core]
   editor=
-	excludesfile = ~/.gitignore_global
+	excludesfile = /home/moodykroko/.gitignore_global
 	autocrlf = input
   filemode = false
   pager = less -FRSX
