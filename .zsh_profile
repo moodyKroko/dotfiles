@@ -3,7 +3,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # make nvim default
 export EDITOR="nvim"
-export TERMINAL="ghostty"
+export TERMINAL="kitty"
 
 # Path Configuration
 export GOPATH="$HOME/go"
