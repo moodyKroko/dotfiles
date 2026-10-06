@@ -4,6 +4,7 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
 # Set name of the theme to load --- if set to "random", it will
 ZSH_THEME="robbyrussell"
+DISABLE_AUTO_TITLE=true
 
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
