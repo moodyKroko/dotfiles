@@ -31,6 +31,8 @@ alias bsconf='nvim ~/.bashrc' # make nvim default
 alias hlc='nvim ~/.config/hypr/hyprland.conf'
 
 # System Utilities
+alias sctl='systemctl'
+alias sctls='systemctl status'
 alias wific='nmtui' # loads terminal ui for wifi management
 alias soz='source ~/.zshrc' # reload .zshrc
 alias root='sudo -i' # tune sudo and su

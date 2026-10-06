@@ -9,6 +9,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   z
+  kubectl
   zsh-autosuggestions
   zsh-syntax-highlighting
   you-should-use
