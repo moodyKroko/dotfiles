@@ -42,6 +42,8 @@ alias ycp='yay -Sc' # clean yay packages
 alias ylp='yay -Ps' # list installed packages in yay
 alias ssh='kitten ssh '
 alias upmirrors='sudo reflector --country GB,FR,DE --latest 10 --protocol https,http --sort rate --save /etc/pacman.d/mirrorlist'
+alias batcap='sudo tlp setcharge 0 1 BAT0' # limit battery charge to 60%
+alias batfull='sudo tlp setcharge 0 0 BAT0' # charge battery to 100%
 
 # Utilities commands
 alias md='mkdir -pv' # create parent directory on demand
