@@ -4,7 +4,7 @@
 #
 
 background-opacity = 0.80
-background-blur = 20
+background-blur = true
 
 window-decoration = server
 window-padding-x = 5

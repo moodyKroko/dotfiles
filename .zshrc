@@ -4,13 +4,12 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
 # Set name of the theme to load --- if set to "random", it will
 ZSH_THEME="robbyrussell"
-DISABLE_AUTO_TITLE=true
 
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  z
   kubectl
+  z
   zsh-autosuggestions
   zsh-syntax-highlighting
   you-should-use
@@ -34,7 +33,7 @@ export FZF_DEFAULT_OPTS="
 
 export FZF_CTRL_T_OPTS="
   --height 60%
-  --preview 'bat --color=always --style=numbers {}'
+  --preview 'batcat --color=always --style=numbers {}'
   --bind 'focus:transform-header:file --brief {}'
   "
 
@@ -55,12 +54,9 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
 # load .zsh_profile
 if [ -f ~/.zsh_profile ]; then
   source ~/.zsh_profile
 fi
+
+cd ~

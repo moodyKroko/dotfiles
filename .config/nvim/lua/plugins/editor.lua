@@ -32,21 +32,17 @@ return {
       require("auto-session").setup({
         log_level = vim.log.levels.ERROR,
 
-        auto_session_enabled = true,
+        enabled = true,
+        cwd_change_handling = true,
         -- auto_save_enabled = true,
         -- auto_restore_enabled = true,
 
         -- "C:\\", "C:\\Users\\james"
-        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/", "$HOME" },
-        auto_session_use_git_branch = false,
-
+        suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/", "$HOME" },
         bypass_save_filetypes = { "alpha", "dashboard" },
-
-        cwd_change_handling = true,
-
-        pre_cwd_changed_cmds = {
-          "tabdo NERDTreeClose",
-        },
+        -- pre_cwd_changed_cmds = {
+        --   "tabdo NERDTreeClose",
+        -- },
       })
     end,
     keys = {
