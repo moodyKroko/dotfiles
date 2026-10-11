@@ -14,7 +14,7 @@ typeset -U path
 
 # helpful alias
 alias vim='nvim'
-alias cat='bat'
+alias cat='batcat'
 alias lg='lazygit'
 alias ld='lazydocker'
 alias zconf='nvim ~/.zshrc'
